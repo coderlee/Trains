@@ -1,0 +1,109 @@
+<view class="park">
+  <view class="parkBox">
+    <view class="lineblock parkTitle-left">
+      <text>园所类型</text>
+    </view>
+    <view class="lineblock parkTitle-right">
+      <radio-group class="group flex" bindchange="radioChange">
+        <view class="label-2 one" wx:for="{{radioItems}}">
+          <label class="label-2-text" for="{{item.name}}">
+            <radio id="{{item.name}}" class="" value="{{item.name}}" checked="{{item.checked}}"></radio>
+            <text>{{item.name}}</text>
+          </label>
+        </view>
+      </radio-group>
+    </view>
+  </view>
+
+  <view class="parkBox">
+    <view class="lineblock parkTitle-left">
+      <text>合同号</text>
+    </view>
+    <view class="lineblock parkTitle-right">
+      <text class="left no_ico">{{QY}} |</text>
+      <input name="test" bindblur='getSchForNo' bindinput='getNo' value='{{contract_no}}' maxlength="11" class="testNum len_text left" placeholder="请填写您的合同号" />
+    </view>
+  </view>
+  <view class="parkBox">
+    <view class="lineblock parkTitle-left">
+      <text>园所名称</text>
+    </view>
+    <view class="lineblock parkTitle-right">
+      <input name="test" disabled='disabled' maxlength="11" class="testNum" value='{{schName}}' placeholder="合同号验证成功后自动填写" />
+    </view>
+  </view>
+</view>
+<view class="hr"></view>
+<view class="bm_type {{course_one_detail.get_charge.charge_way==3?'r_radio':''}}">
+  <text>{{course_one_detail.get_charge.charge_way==3?"请选择报名方式":"报名方式"}}</text>
+</view>
+<view class="model_list">
+  <view class="list_price" wx:if="{{course_one_detail.get_charge.charge_way==1}}" wx:for="{{pay_type_list}}">
+    <view class="left">
+      <text class="group_t {{index==0?'has_min':''}}">{{item.attr_name}}:</text>
+      <text class="group_t min_num" wx:if="{{index==0&&course_one_detail.get_charge.min_num}}">({{course_one_detail.get_charge.min_num}})人</text>
+    </view>
+    <view class="right">
+      <text class="{{index==0?'has_min':''}}">￥{{item.attr_price}}/{{course_one_detail.get_charge.unit==1?"人":"园所"}}</text>
+    </view>
+  </view>
+  <view class="list_price" wx:if="{{course_one_detail.get_charge.charge_way==2}}" wx:for="{{pay_type_list}}">
+    <view class="left">
+      <text class="group_t">{{item.attr_name}}:</text>
+    </view>
+    <view class="right">
+      <text>￥{{item.attr_price}}/{{course_one_detail.get_charge.unit==1?"人":"园所"}}</text>
+      <text wx:if="{{course_one_detail.get_charge.unit!=1}}">({{course_one_detail.get_charge.max_nursery_num}}人)</text>
+    </view>
+  </view>
+  <view wx:if="{{course_one_detail.get_charge.charge_way==3}}" wx:for="{{pay_type_list}}" class="list_price three_r {{checkedOneId==index?'checked_three_h':''}}">
+    <view class="left">
+      <text class="group_t">{{item.attr_name}}:</text>
+    </view>
+    <view class="right">
+      <view>
+        <text class="has_radio">￥{{item.attr_price}}/{{course_one_detail.get_charge.unit==1?"人":"园所"}}</text>
+        <text class="has_radio" wx:if="{{course_one_detail.get_charge.unit!=1}}">({{course_one_detail.get_charge.max_nursery_num}}人)</text>
+        <radio data-itid="{{index}}" data-price="{{item.attr_price}}" checked='{{checkedOneId==index}}' bindtap='che_reaone'></radio>
+      </view>
+    </view>
+  </view>
+  <view class="list_price free_price" wx:if="{{course_one_detail.is_free==0}}">
+    <text>免费</text>
+  </view>
+</view>
+<view class="hr"></view>
+<!-- <navigator wx:if="{{schName&&!student_count}}" url="/pages/index/signUP/signUpList/addInfo/index?source_url=/pages/index/signUP/signUpList/index&train_id={{train_id}}&type_unit={{type_unit}}&unit_num={{unit_num}}&contract_no={{QY+contract_no}}&enpty=1"  open-type='reLaunch' class="addStudy">
+  新增/修改培训学员
+</navigator> -->
+<navigator url="/pages/index/signUP/signUpList/editInfo/index?source_url=/pages/index/signUP/signUpList/index&train_id={{train_id}}&type_unit={{type_unit}}&unit_num={{unit_num}}&contract_no={{QY+contract_no}}" class="addStudy">
+  新增/修改培训学员
+</navigator>
+<view class="students">
+  <view class="studentBox" wx:for="{{studentList}}">
+    <view class="lineblock dle">
+      <image data-index="{{index}}" data-id="{{item.id}}" bindtap='delItem' class="deleteImg" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB0AAAAhCAYAAAAlK6DZAAABiElEQVRIie3XMWvVYBTG8d+VILZUdHJUxL1u0sGxo4ugg36AgwgWJ1eHLrqo6KA3X0BFh64OCk4qiCC4ORSlUBELHQql0BKH+0Yv18SkqXSQPBBOyDnn+b8QXjhnMBwONeg67jYVJV2NiIdNRVkLo29YxoGGuh18b+HXCvokPZWKiDacP6AncHLXnUl5nu+2ZTnDJ8x0hXbQRoY7OL2P0I8Zbu7Foes/hQEu4i2+7uUQVcrz/Djm8CwiihJ6Bk/xGJcr+k7hCD7UmE7jLF5GxE5FyS1cwhe8K+/eVIrTNYddwhscqsnfwAucr8mXvlM0X/hSh3HwL9CjKba6BW2h/1Q9tIf20B7aQ3vofwot9olXjENXU+w8dDeo9F0dh37GCmYxX9G0hs30VOlHiuuTiTzP55PvSuL8GkELLGKI57iS4nbKnzMaqrZqoLeNBrP3Y7AMF/AofVqMiAIGE6vifVxL75tabmE1Oub3lPkgIhbKxOTWtoBXRjvpnNFy1VVbeI17EbE0nvgJaztSAamyRmYAAAAASUVORK5CYII="></image>
+    </view>
+    <view class="lineblock stuInfo">
+      <view>
+        <text class="userName">{{item.get_student.student_name}}</text>
+        <text class="sex {{item.get_student.student_sex==1?'boy':'girl'}}"></text>
+      </view>
+      <text class="block userPhone">{{item.get_student.student_phone}}</text>
+    </view>
+    <view class="lineblock works">
+      <text>{{item.get_student.student_position}}</text>
+    </view>
+  </view>
+</view>
+<view class="payBtn" wx:if="{{course_one_detail.is_free}}">
+  <view class="money_all left">
+    <text class="countTitle">合计：{{course_one_detail.get_charge.unit==1?one_prices*studentList.length:one_prices}}元</text>
+  </view>
+  <view class="goPay left {{!studentList.length?'bgcc':''}}" bindtap='goPay'>
+    <text>去支付</text>
+  </view>
+</view>
+<view wx:if="{{course_one_detail.is_free==0}}" class="payBtn pay_free {{!studentList.length?'bgcc':''}}" bindtap='goPay'>
+  <text>报名</text>
+</view>

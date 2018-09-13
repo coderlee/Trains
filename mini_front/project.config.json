@@ -1,0 +1,84 @@
+{
+	"description": "项目配置文件。",
+	"packOptions": {
+		"ignore": []
+	},
+	"setting": {
+		"urlCheck": true,
+		"es6": true,
+		"postcss": true,
+		"minified": true,
+		"newFeature": true
+	},
+	"compileType": "miniprogram",
+	"libVersion": "2.1.1",
+	"appid": "wx784738de34f8f5d6",
+	"projectname": "%E5%9F%B9%E8%AE%AD%E6%8A%A5%E5%90%8D",
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"currentL": -1,
+			"list": []
+		},
+		"miniprogram": {
+			"current": -1,
+			"list": [
+				{
+					"id": -1,
+					"name": "程序入口",
+					"pathName": "pages/index/index",
+					"query": "",
+					"scene": "1001"
+				},
+				{
+					"id": 1,
+					"name": "报名页面设置",
+					"pathName": "pages/index/signUP/index",
+					"query": "",
+					"scene": "1001"
+				},
+				{
+					"id": -1,
+					"name": "客户信息列表",
+					"pathName": "pages/index/signUP/signUpList/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "我的报名",
+					"pathName": "pages/my/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "状态详情",
+					"pathName": "pages/my/allInfo/index",
+					"query": ""
+				},
+				{
+					"id": 5,
+					"name": "编辑列表页",
+					"pathName": "pages/index/signUP/signUpList/editInfo/index",
+					"query": ""
+				},
+				{
+					"id": 6,
+					"name": "添加学员",
+					"pathName": "pages/index/signUP/signUpList/addInfo/index",
+					"query": ""
+				}
+			]
+		}
+	}
+}

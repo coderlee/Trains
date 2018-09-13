@@ -1,0 +1,133 @@
+/* pages/my/index.wxss */
+
+.selectBorder {
+  width: 122rpx;
+  height: 5rpx;
+  background-color: #ff5a8e;
+  border-radius: 1rpx;
+}
+
+.tabBox {
+  border-bottom: solid 1px #ddd;
+}
+
+.type {
+  display: block;
+  height: 84rpx;
+  line-height: 84rpx;
+  background-color: #fff;
+  font-size: 30rpx;
+  color: #333;
+  width: 120rpx;
+  margin: 0 auto;
+}
+
+.curTabBox {
+  border-bottom: 2px solid #ff5a8e;
+  color: #ff5a8e;
+}
+
+.coursePrompt {
+  height: 68rpx;
+  line-height: 68rpx;
+  text-align: center;
+  font-size: 26rpx;
+  color: #ff7c12;
+  background-color: #fffdef;
+}
+
+/* 培训详情 */
+
+.tabBoxSelect {
+  color: #333;
+}
+
+.courseBox {
+}
+
+.courseTitleBox {
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  margin-left: 38rpx;
+  width: 710rpx;
+  height: 78rpx;
+  line-height: 78rpx;
+  border-bottom: 1px solid #ddd;
+}
+
+.courseTitle {
+  font-size: 28rpx;
+  color: #333;
+}
+
+.courseStatus {
+  font-size: 26rpx;
+  color: #ff5a8e;
+  padding-right: 40rpx;
+}
+
+.courseInfo {
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  margin-left: 38rpx;
+  width: 710rpx;
+  height: 191rpx;
+  border-bottom: 1px solid #ddd;
+  padding: 25rpx 0;
+}
+
+.allPics {
+  margin-top: 25rpx;
+}
+
+.courseLogo {
+  padding: 26rpx 6rpx 30rpx 0;
+  background-color: #333;
+  width: 287rpx;
+  height: 135rpx;
+}
+
+.Price {
+  padding-right: 40rpx;
+  text-align: right;
+  font-size: 28rpx;
+  color: #333;
+}
+
+.picNum {
+  height: 60rpx;
+  line-height: 60rpx;
+}
+
+.picGray {
+  color: #999;
+}
+
+.courseBtn {
+  text-align: right;
+  padding: 20rpx 40rpx 25rpx 0;
+}
+
+.courseBtn .lineblock {
+  width: 160rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  font-size: 28rpx;
+  color: #888;
+  text-align: center;
+  border-radius: 29rpx;
+  border: solid 2rpx #cacaca;
+}
+
+.courseBtn .payBtn {
+  margin-left: 78rpx;
+  color: #ff5a8e;
+  border-color: #ff5a8e;
+}
+
+.btnFix {
+  width: 50%;
+  margin-top: 45%;
+}

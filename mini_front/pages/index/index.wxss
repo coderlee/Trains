@@ -1,0 +1,200 @@
+/* pages/index/index.wxss */
+
+page {
+  background-color: #f4f4f4;
+}
+
+.signList {
+  margin: 30rpx 20rpx 0rpx;
+  margin-bottom: 40rpx;
+  position: relative;
+  font-size: 28rpx;
+  border-radius: 20rpx;
+  color: #000;
+  background-color: #fff;
+}
+
+.img {
+  border-radius: 20rpx 20rpx 0 0;
+}
+
+.signListTile {
+  margin: 0px 30rpx;
+  line-height: 93rpx;
+  font-size: 36rpx;
+  color: #333;
+  border-bottom: 1px solid #eee;
+}
+
+.textEllipsis {
+  margin: 25rpx 0;
+}
+
+.konwNum {
+  font-size: 30rpx;
+  color: #ff5a8e;
+}
+
+.allNum {
+  font-size: 30rpx;
+  color: #333;
+}
+
+.signInfo {
+  margin: 0px 30rpx;
+  font-size: 26rpx;
+  color: #666;
+  border-bottom: 1px solid #eee;
+}
+
+.activityTime {
+  line-height: 70rpx;
+}
+
+.active_people_num_type {
+width:100%;
+color:#fff;
+height:60rpx;
+line-height:90rpx;
+font-size:26rpx;
+position:absolute;
+top:216rpx;
+background:linear-gradient(rgba(234,225,230,.0) 2%,rgba(0,0,0,.7));
+text-indent:50%;
+padding:10rpx 0;
+}
+
+.linghtTitle {
+  border: 1px solid #ff5a8e;
+  font-size: 24rpx;
+  line-height: 97rpx;
+}
+
+.termTitle {
+  color: #ff5a8e;
+  font-size: 36rpx;
+}
+
+.price {
+  height: 110rpx;
+  line-height: 110rpx;
+  text-align: center;
+}
+
+.price_mf {
+  padding-left: 30rpx;
+}
+
+.pic_left {
+  text-align: left;
+}
+
+.has_min {
+  color: #ff5a8e;
+}
+
+.min_num {
+  color: #888;
+}
+
+.one {
+  position: relative;
+  font-size: 28rpx;
+  color: #888;
+  text-align: right;
+  padding-right: 30rpx;
+}
+
+.currentOne {
+  height: 110rpx;
+  line-height: 110rpx;
+  color: #000;
+  font-size: 38rpx;
+  font-weight: 400;
+  text-align: left;
+  padding-left: 30rpx;
+  padding-right: 0;
+}
+
+.currentList {
+  color: #555;
+  font-size: 28rpx;
+  text-align: left;
+  padding-right: 0;
+}
+
+.group_b_list {
+  font-size: 30rpx;
+}
+
+.group_t {
+  font-size: 30rpx;
+  color: #ff5a8e;
+}
+
+.ic_type {
+  width: 70rpx;
+}
+
+.group_b {
+  width: 58rpx;
+  height: 30rpx;
+  line-height: 30rpx;
+  text-align: center;
+  color: #ff5a8e;
+  font-size: 32rpx;
+  padding: 1rpx 2rpx;
+  position: relative;
+  top: -2px;
+}
+
+.num_xz {
+  font-size: 24rpx;
+  color: #888;
+}
+
+.picName {
+  line-height: 97rpx;
+  margin: 0px 30rpx;
+}
+
+.picTitle {
+  font-size: 35rpx;
+  color: #333;
+  border-bottom: 1px solid #eee;
+}
+
+.model_list {
+  margin: 0 30rpx;
+}
+
+.list_price {
+  height: 70rpx;
+  line-height: 70rpx;
+  border-bottom: 1px dashed #eee;
+}
+
+.list_price:last-child {
+  border-bottom: 0;
+}
+
+.siginPic {
+  font-size: 36rpx;
+  color: #555;
+}
+
+.activityTitle {
+  position: absolute;
+  right: 0;
+  top: 30rpx;
+  width: 124rpx;
+  line-height: 48rpx;
+  text-align: center;
+  color: #fff;
+  background-color: #ff5a8e;
+  border-radius: 8rpx 0 0 8rpx;
+}
+
+.over {
+  background-color: #b1b1b1;
+}

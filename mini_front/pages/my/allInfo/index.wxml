@@ -1,0 +1,59 @@
+<view class="status {{ico_status}}"></view>
+<view class="titleMes">
+  <view>
+    <text class="timeTitle">{{status}}</text>
+  </view>
+  <view wx:if="{{status=='审核失败'}}">
+    <text class="status_msg">{{train_info.remark}}</text>
+  </view>
+  <view class="timesBox" wx:if="{{times}}">
+    <text class="times">{{times}}</text>
+  </view>
+</view>
+<view class="giveClass">
+  <view class="personClass">
+    <view class="flex personTitle">
+      <text class="one">培训人员</text>
+      <text class="one">电话</text>
+    </view>
+    <view>
+      <view class="flex personTitle" wx:for="{{train_info.get_students}}" wx:key="{{item.id}}">
+        <view class="left">
+          <text class="one">{{item.get_nursery_user.student_name}}</text>
+        </view>
+        <view class="right">
+          <text class="one">{{item.get_nursery_user.student_phone}}</text>
+          <image class="one noPass" wx:if="{{noPass}}" data-editid="{{item.get_nursery_user.id}}" src="/image/nopassedit.png" bindtap='goEdit'></image>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="classMes">
+    <view class="mesBox">
+      <text class="classTitle">培训时间：</text>
+      <text class="classInfo">{{train_info.get_train.train_start}} - {{train_info.get_train.train_end}}</text>
+    </view>
+    <view class="mesBox">
+      <text class="classTitle">培训地点：</text>
+      <text class="classInfo">{{train_info.get_train.train_adress}}</text>
+    </view>
+    <view class="mesBox">
+      <text class="classTitle">创建时间：</text>
+      <text class="classInfo">{{train_info.created_at}}</text>
+    </view>
+    <view class="mesBox">
+      <text class="classTitle">园所合同号：</text>
+      <text class="classInfo">{{train_info.contract_no}}</text>
+    </view>
+  </view>
+</view>
+<view class="wx_pay" wx:if="{{isShowPay}}" bindtap='goPay'>
+  <text>微信支付</text>
+  <text>￥{{train_info.total_fee}}</text>
+</view>
+<view class="wx_pay" wx:if="{{noPass}}" bindtap='goSubmit'>
+  <text>提交</text>
+</view>
+ <view  wx:if="{{!noPass&&!isShowPay}}">
+    <button class="btnFix" type="primary" bindtap='goIndex'>前往首页</button>
+</view>

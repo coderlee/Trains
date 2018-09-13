@@ -1,0 +1,5 @@
+<view>
+  <navigator url="detailsInfo/index" hover-class="navigator-hover">
+    报名状态详情
+  </navigator>
+</view>

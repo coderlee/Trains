@@ -1,0 +1,128 @@
+/* 报名 */
+
+.initView {
+  word-break: break-all;
+  height: auto;
+  overflow: hidden;
+  padding: 30rpx 30rpx 48rpx 30rpx;
+}
+
+.button-hover {
+  background-color: skyblue;
+}
+
+/** 添加自定义button点击态样式类**/
+
+.other-button-hover {
+  background-color: skyblue;
+}
+
+.alertBg {
+  position: fixed;
+  top: 0;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.formStyle {
+  width: 420rpx;
+  overflow: hidden;
+  padding: 60rpx;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -80%);
+  z-index: 1001;
+  background: #fafafa;
+  border-radius: 3px;
+}
+
+.formStyle_train {
+  background: #d7d7d7;
+  color: #333;
+  font-size: 30rpx;
+}
+
+.train_con {
+  position: relative;
+  height: 100%;
+  padding: 30rpx;
+}
+
+.close {
+  position: absolute;
+  bottom: 60rpx;
+  width: 100%;
+  text-align: center;
+}
+
+.section {
+  margin-top: 50rpx;
+}
+
+.testNum {
+  display: inline-block;
+  width: 195rpx;
+  font-size: 28rpx;
+  color: #333;
+}
+
+.testBtn {
+  width: 195rpx;
+  font-size: 28rpx;
+  display: inline-block;
+  height: 80rpx;
+  line-height: 80rpx;
+  color: #fff !important;
+  background: #ff5a8e !important;
+  float: right;
+}
+
+.testBtn[disabled] {
+  color: #ccc !important;
+  background: none !important;
+}
+
+.agree_check {
+  display: inline-block;
+  width: 70rpx;
+  height: 55rpx;
+}
+
+.agr_mar {
+  margin-top: 30rpx;
+}
+
+.t1 {
+  font-size: 32rpx;
+  color: #555;
+}
+
+.trainMement {
+  color: #00f;
+  font-size: 32rpx;
+  text-decoration: underline;
+}
+
+.closePhone {
+  text-align: right;
+}
+
+.btnFix {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  border-radius: 0 !important;
+}
+
+.submitBtn {
+  margin-top: 50rpx;
+  width: 300rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  color: #fff !important;
+  background: #ff5a8e !important;
+}

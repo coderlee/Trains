@@ -1,0 +1,117 @@
+/* pages/index/signUP/signUpList/addInfo/index.wxss */
+.boxHeight {
+  height: 64rpx;
+}
+
+.sexBox {
+  height: 68rpx;
+  color: transparent;
+}
+
+.checkedBg, .girl {
+  height: 68rpx;
+  line-height: 68rpx;
+}
+
+.checkBg {
+  background-size: 94%;
+  vertical-align: middle;
+}
+
+.boyBox {
+  width: 300rpx;
+  height: 68rpx;
+  line-height: 68rpx;
+  background-size: 15%;
+  background-position-x: 24%;
+}
+
+.chooses {
+  float: left;
+  width: 65%;
+}
+
+.girlBox {
+  width: 106rpx;
+  height: 68rpx;
+  line-height: 68rpx;
+  background-size: 30%;
+  background-position-x: 80%;
+}
+
+.education {
+  position: relative;
+  width: 200rpx;
+  height: 64rpx;
+  line-height: 64rpx;
+}
+
+.education_name {
+  position: absolute;
+  width: 90%;
+}
+
+.education_select {
+  position: absolute;
+  padding-left: 20rpx;
+  width: 90%;
+  top: 68rpx;
+  background: #fff;
+  border: 1px solid #ccc;
+}
+
+.major {
+  width: 130rpx;
+}
+
+.photo-image-wrap {
+  display: flex;
+}
+
+.imageTitle {
+  width: 150rpx;
+}
+
+.u-p-m {
+  text-align: center;
+  font-size: 28rpx;
+  margin-right: 15rpx;
+  min-width: 168rpx;
+}
+
+.uploadBg {
+  display: block;
+  width: 80rpx;
+  height: 80rpx;
+  margin: 0 auto;
+  margin-bottom: 5rpx;
+}
+
+.errors {
+  display: block;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  width: 300rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  text-align: center;
+  padding: 5rpx;
+  margin: -30rpx 0 0 -150rpx;
+  background: #000;
+  opacity: 0.3;
+  color: #fff;
+}
+
+.submitButton {
+  width: 540rpx;
+  height: 90rpx;
+  line-height: 90rpx;
+  text-align: center;
+  color: #fff;
+  border-radius: 64rpx;
+  background: #ff4a7e;
+  margin: 0 auto;
+  margin-top: 110rpx;
+  font-size: 30rpx;
+}

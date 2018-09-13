@@ -1,0 +1,48 @@
+<view bindtap='goUpIndex' wx:for="{{list}}" wx:key="{{item.id}}" data-id="{{item.id}}" data-index="{{index}}">
+  <view class="signList">
+    <image class="img" src="{{item.banner}}"></image>
+    <view class="picName picTitle">
+      {{item.title}}
+    </view>
+    <view class="signInfo">
+      <view class="clearBoth textEllipsis">
+        <text class="left">报名时间：{{item.apply_start}} - {{item.apply_end}}</text>
+      </view>
+      <view class="clearBoth textEllipsis">
+        <text class="left">培训时间：{{item.train_start}} - {{item.train_end}}</text>
+      </view>
+      <view class="clearBoth textEllipsis">
+        <text class="left">地址：{{item.train_adress}}</text>
+      </view>
+    </view>
+    <view wx:if="{{item.is_free==0}}" class="one currentOne">
+      <text class="group_b">免费</text>
+    </view>
+    <view wx:if="{{item.is_free!=0&&item.get_charge.charge_way==1}}" wx:for="{{item.getPrices}}" wx:for-item="items" class="model_list">
+      <view class="list_price flex">
+        <view class="one currentList">
+          <text class="{{index==0?'group_t':''}}">{{items.attr_name}}:</text>
+          <text class="num_xz min_num" wx:if="{{index==0&&item.get_charge.min_num}}">({{item.get_charge.min_num}})人</text>
+        </view>
+        <view class="one">
+          <text class="{{index==0?'group_t':''}}">￥{{items.attr_price}}/{{item.get_charge.unit==1?"人":"园所"}}</text>
+        </view>
+      </view>
+    </view>
+    <view wx:if="{{item.is_free!=0&&item.get_charge.charge_way!=1}}" wx:for="{{item.getPrices}}" wx:for-item="items" class="model_list">
+      <view class="list_price flex">
+        <view class="one currentList">
+          <text>{{items.attr_name}}:</text>
+        </view>
+        <view class="one">
+          <text>￥{{items.attr_price}}/{{item.get_charge.unit==1?"人":"园所"}}</text>
+        </view>
+      </view>
+    </view>
+
+    <view class="activityTitle {{item.status==2?'':'over'}}">{{item.status==0?"已结束":item.status==1?"待开始":"活动中"}}</view>
+    <view class="active_people_num_type" >
+      <text decode="{{true}}">已经报名:&nbsp;&nbsp;{{item.sale_num+item.jia_sale_num}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;剩余人数:&nbsp;&nbsp;{{item.pre_num}}</text>
+    </view>
+  </view>
+</view>

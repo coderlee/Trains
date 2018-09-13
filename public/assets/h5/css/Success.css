@@ -1,0 +1,22 @@
+main h2 {
+  margin: 0.2rem auto;
+  font-weight: 500;
+  font-size: 0.44rem;
+}
+main .userInfo {
+  padding: 0rem 0.8rem;
+}
+main .userInfo .infoList {
+  text-align: left;
+  margin: 0.3rem 0rem;
+  font-size: 0.32rem;
+}
+main .userInfo .infoList .fl {
+  width: 2rem;
+}
+main .userInfo .infoList .fr {
+  width: 3.8rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}

@@ -1,0 +1,56 @@
+input,
+button,
+select,
+textarea {
+  outline: none;
+  -webkit-appearance: none;
+  border-radius: 0;
+  border: 1px;
+}
+a {
+  text-decoration: none;
+  color: #A57C7C;
+}
+.clearfloat:after {
+  display: block;
+  clear: both;
+  content: "";
+  visibility: hidden;
+  height: 0;
+}
+.clearfloat {
+  zoom: 1;
+}
+.fl {
+  float: left;
+}
+.fr {
+  float: right;
+}
+.hidden {
+  display: none;
+}
+header {
+  padding-top: 1.3rem;
+  text-align: center;
+}
+header img {
+  display: inline-block;
+  width: 2rem;
+  height: 2rem;
+}
+header h2 {
+  font-weight: 500;
+  margin-top: 0.3rem;
+  margin-bottom: 0.2rem;
+}
+header span {
+  color: red;
+}
+header .hr {
+  margin: 0.2rem 0;
+  border-top: 1px solid #666;
+}
+main {
+  text-align: center;
+}

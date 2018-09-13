@@ -1,0 +1,242 @@
+/* pages/index/signUp/signUpList/index.wxss */
+
+.parkTitle, .parkTitle .label-2 {
+  display: inline-block;
+}
+
+.group {
+  display: flex;
+}
+
+.parkBox {
+  margin: 0;
+  padding: 23rpx 0;
+  border-bottom: 1px solid #e7e7e7;
+}
+
+.parkBox:first-child {
+  padding-bottom: 33rpx;
+}
+
+.parkBox:nth-child(2) {
+  padding-bottom: 20rpx;
+}
+
+.testNum {
+  border: 0;
+  display: inline-block；;
+}
+.len_text{
+  width:80%;
+
+}
+.has_min {
+  color: #ff5a8e;
+}
+
+.min_num {
+  color: #888;
+}
+
+.r_radio {
+  border: 0 none !important;
+}
+
+.three_r {
+  border: 1px solid #ccc !important;
+  border-radius: 10rpx;
+  margin: 30rpx 0;
+  padding-left: 38rpx !important;
+  padding-right: 20rpx;
+}
+
+.has_radio {
+  margin-right: 18rpx;
+}
+
+.checked_three_h {
+  color: #ff5a8e !important;
+  border-color: #ff5a8e !important;
+}
+
+.no_ico {
+  font-size: 32rpx;
+  color: #333;
+  margin-right: 15rpx;
+}
+
+.price {
+  height: 110rpx;
+  line-height: 110rpx;
+  text-align: center;
+}
+
+.works {
+  width: 170rpx;
+  line-height: 80rpx;
+  text-align: right;
+  font-size: 28rpx;
+  color: #333;
+}
+
+.dle {
+  width: 100rpx;
+  line-height: 80rpx;
+  text-align: center;
+}
+
+.deleteImg {
+  width: 29rpx;
+  height: 33rpx;
+}
+
+.bm_type, .list_price {
+  height: 80rpx;
+  line-height: 80rpx;
+  text-align: center;
+  color: #333;
+  font-size: 30rpx;
+  border-bottom: 1px solid #eee;
+}
+
+.parkTitle-left {
+  width: 195rpx;
+  display: inline-block;
+  float: left;
+  height: 1.4rem;
+  min-height: 1.4rem;
+  line-height: 1.4rem;
+  color: #555;
+}
+
+.model_list {
+  margin-left: 60rpx;
+  padding-right: 50rpx;
+}
+
+.free_price {
+  text-align: left;
+}
+
+.list_price {
+  padding-left: 10rpx;
+  border-bottom: 1px solid #eee;
+}
+
+.list_price:last-child {
+  border-bottom: 0;
+}
+
+/* 合计 */
+
+.count {
+  padding-right: 60rpx;
+  line-height: 120rpx;
+  text-align: right;
+  font-size: 30rpx;
+  color: #ff5a8e;
+}
+
+.countTitle {
+  color: #555;
+}
+
+.one {
+  position: relative;
+  font-size: 28rpx;
+  color: #888;
+}
+
+.currentOne {
+  color: #000;
+  font-size: 38rpx;
+  font-weight: 400;
+}
+
+.ic_type {
+  width: 70rpx;
+}
+
+.no_auto_name {
+  color: #b2b2b2;
+}
+
+.group_b {
+  width: 58rpx;
+  height: 30rpx;
+  line-height: 30rpx;
+  text-align: center;
+  border-radius: 4rpx;
+  color: #ff5a8e;
+  border: 1px solid #ff5a8e;
+  font-size: 24rpx;
+  padding: 1rpx 2rpx;
+  position: relative;
+  top: -2px;
+}
+
+.num_xz {
+  font-size: 20rpx;
+  font-size: 20rpx;
+  position: absolute;
+  top: 37rpx;
+  left: 76rpx;
+  color: #888;
+}
+
+.addStudy {
+  padding-left: 38%;
+  background-position-x: 30%;
+  font-size: 30rpx;
+}
+
+.countRide {
+  font-size: 24rpx;
+}
+
+.stuInfo {
+  position: relative;
+  top: 14rpx;
+}
+
+.students {
+  padding-bottom: 95rpx;
+}
+
+/* 支付按钮 */
+
+.payBtn {
+  font-size: 30rpx;
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  height: 90rpx;
+  line-height: 90rpx;
+  border-top: 1px solid #eee;
+  z-index: 9999;
+}
+
+.money_all {
+  width: 60%;
+  color: #333;
+  font-size: 30rpx;
+  text-align: center;
+  background: #fff;
+}
+
+.goPay {
+  width: 40%;
+  text-align: center;
+  color: #fff;
+  background: #09bb07;
+}
+
+.pay_free {
+  background: #09bb07;
+  color: #fff;
+  text-align: center;
+}
+
+.bgcc {
+  background: #ccc;
+}

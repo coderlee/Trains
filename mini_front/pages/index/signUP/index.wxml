@@ -1,0 +1,51 @@
+<import src="./../../../wxParse/wxParse.wxml" />
+<view class="initView">
+  <template is="wxParse" data="{{wxParseData:article.nodes}}" />
+  <radio-group class="group" bindchange="radioChange">
+    <view class="label-2" wx:for="{{radioItems}}">
+      <label class="label-2__text" for="{{item.name}}">
+        <radio id="{{item.name}}" hidden value="{{item.name}}" checked="{{item.checked}}"></radio>
+        <view class="label-2__icon">
+          <view class="label-2__icon-checked" style="opacity:{{item.checked ? 1: 0}}"></view>
+        </view>
+        <text>{{item.name}}</text>
+      </label>
+    </view>
+  </radio-group>
+  <view class="agr_mar">
+    <checkbox class="agree_check" type='checkout' disabled='{{readStatement}}' checked='{{readStatementC}}' bindtap='agree'></checkbox>
+    <text class="t1">已同意</text>
+    <text class="trainMement" bindtap="showContent">{{trainS}}</text>
+  </view>
+
+</view>
+<view>
+  <button wx:if="{{canIUse}}" open-type="getUserInfo" class="btnFix" type="primary" disabled='{{traninBmBefor}}' bindgetuserinfo="bindGetUserInfo" hover-class="other-button-hover">报名</button>
+
+</view>
+<view class="alertBg formStyle_train" wx:if="{{showBmPop_train}}">
+  <view class="train_con">
+    <template is="wxParse" data="{{wxParseData:article2.nodes}}" />
+  </view>
+  <text class="close" bindtap='closePop'>关闭</text>
+</view>
+<view class="alertBg" wx:if="{{showBmPop}}">
+  <view class="formStyle">
+    <form bindsubmit="formSubmit" class="formDate">
+      <view class="closePhone" bindtap='closePhone'>
+        <text>x</text>
+      </view>
+      <view class="section">
+      <input type='text' class="hide" name="open_id" value='{{user_openid}}' />
+        <input name="apply_phone" type="number" disabled="{{disPhone}}" bindinput="testPhone" maxlength="11" class="border phone" placeholder="请输入手机号验证" />
+      </view>
+      <view class="section">
+        <input name="code" type="number" maxlength="6" class="border testNum" placeholder="请输入验证码" />
+        <button class="testBtn" bindtap="getTextNum" disabled="{{showBtn}}">{{time}}</button>
+      </view>
+      <view class="btn-area">
+        <button formType="submit" disabled='{{isAjax}}' class="submitBtn">确定</button>
+      </view>
+    </form>
+  </view>
+</view>

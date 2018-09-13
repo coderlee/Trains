@@ -1,0 +1,53 @@
+header {
+  width: 100%;
+  height: 5.93rem;
+  background: url(../imgs/bg_img.png) no-repeat center;
+  background-size: cover;
+  padding: 0;
+}
+main {
+  text-align: left;
+  background: #fff;
+}
+main .inpuBox {
+  padding: 1rem;
+}
+main .inpuBox .phoneNum,
+main .inpuBox .testNum {
+  font-size: 0.3rem;
+  height: 1.1rem;
+  line-height: 1.1rem;
+  background: url(../imgs/icon_message.png) left center no-repeat;
+  border-bottom: 1px solid #eeeeee;
+  background-size: 7%;
+  padding-left: 0.8rem;
+}
+main .inpuBox .phoneNum {
+  background-image: url(../imgs/icon_phone.png);
+}
+main .inpuBox .phoneNum input {
+  width: 2.8rem;
+}
+main .inpuBox .phoneNum #testBtn {
+  text-align: right;
+  background-color: #fff;
+  border-left: 1px solid #ededed;
+  color: #ff5a8e;
+}
+main .inpuBox .testNum {
+  background-image: url(../imgs/icon_message.png);
+}
+main .inpuBox .testNum input {
+  width: 2.3rem;
+}
+main #sigin {
+  margin: 0 auto;
+  display: block;
+  width: 5.4rem;
+  height: 0.88rem;
+  color: #fff;
+  background-color: #ff5a8e;
+  border-radius: 0.43rem;
+  -webkit-box-shadow: 0px 5px 13px #ccc;
+  box-shadow: 0px 5px 13px #ccc;
+}

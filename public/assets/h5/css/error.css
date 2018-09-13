@@ -1,0 +1,14 @@
+main {
+  text-align: center;
+}
+a {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 1remrem;
+  line-height: 1rem;
+  text-align: center;
+  text-decoration: none;
+  color: #fff;
+  background-color: #09bb07;
+}

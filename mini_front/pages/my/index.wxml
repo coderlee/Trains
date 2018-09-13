@@ -1,0 +1,41 @@
+<view class="flex tabBox">
+  <view class="one textCenter">
+    <text data-tab='0' class="type {{tabCur=='0'?'curTabBox':''}}" bindtap='chooseTab'>全部</text>
+  </view>
+  <view class="one textCenter">
+    <text data-tab='1' class="type {{tabCur=='1'?'curTabBox':''}}" bindtap='chooseTab'>待支付</text>
+  </view>
+</view>
+<view class="coursePrompt">
+  <text>请注意：30分钟内未支付,系统将自动取消订单</text>
+</view>
+<view id="all">
+  <button wx:if="{{canIUses}}" open-type="getUserInfo" class="btnFix" type="primary" disabled='{{traninBmBefor}}' bindgetuserinfo="bindGetUserInfo" hover-class="other-button-hover">请先授权</button>
+  <view  wx:for="{{dataList}}" wx:key="{{item.id}}">
+    <view class="courseBox" data-id="{{item.id}}" data-trainid="{{item.get_train.id}}" catchtap='goTrainDetail'>
+      <view class="hr"></view>
+      <view class="courseTitleBox flex">
+        <text class="courseTitle">{{item.get_train.title}}</text>
+        <text class="courseStatus" wx:if="{{item.is_paid==0}}">{{item.status==2?"已取消":"待支付"}}</text>
+        <text class="courseStatus" wx:if="{{item.is_paid==1}}">{{item.status==2?"已取消":item.status==1?"已退款":item.status==2?"已取消":item.status==3?"审核中":item.status==4?"审核未通过":item.status==5?"部分审核":item.status==6?"已审核":item.status==7?"已完成":"未知"}}</text>
+      </view>
+      <view class="courseInfo flex">
+        <view class="one">
+          <image class="courseLogo" src="{{item.get_train.banner}}"></image>
+        </view>
+        <view class="one Price">
+          <text class="block picNum">￥{{item.total_fee/item.apply_num}}</text>
+          <text class="block picNum picGray">X{{item.apply_num}}</text>
+          <view class="picNum allPics">
+            <text class="picGray">合计</text>
+            <text>￥{{item.total_fee}}</text>
+          </view>
+        </view>
+      </view>  
+    </view>
+    <view class="courseBtn" wx:if="{{item.is_paid==0&&item.status!=2}}">
+      <text class="lineblock cancleBtn" data-id="{{item.id}}" catchtap='bmCancel'>取消报名</text>
+      <text class="lineblock payBtn" data-id="{{item.id}}" catchtap='goPay'>去支付</text>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,152 @@
+<view class="park">
+  <form bindsubmit="formSubmit">
+    <view class="parkBox">
+      <view class="lineblock parkTitle-left addUserTitle">
+        <text class="textContract">学员姓名：</text>
+      </view>
+      <view class="lineblock parkTitle-right">
+        <input name="student_name" maxlength="5" class="border testNum boxHeight" value='{{user_id_detail.student_name}}' placeholder="请输入姓名" />
+      </view>
+    </view>
+    <view class="parkBox">
+      <view class="lineblock parkTitle-left addUserTitle">
+        <text class="textContract">学员手机号：</text>
+      </view>
+      <view class="lineblock parkTitle-right">
+        <input name="student_phone" type="number" maxlength="11" class="border testNum boxHeight" value='{{user_id_detail.student_phone}}' placeholder="请输入手机号" />
+      </view>
+    </view>
+    <view class="parkBox">
+      <view class="lineblock parkTitle-left addUserTitle">
+        <text class="textContract">学员身份证号：</text>
+      </view>
+      <view class="lineblock parkTitle-right">
+        <input name="idcard" type='idcard' maxlength="18" class="border testNum boxHeight" value='{{user_id_detail.idcard}}' placeholder="请输入身份证或台胞证" />
+      </view>
+    </view>
+    <view class="parkBox">
+      <view class="lineblock parkTitle-left addUserTitle">
+        <text class="textContract">学员性别：</text>
+      </view>
+      <view class="lineblock parkTitle-right sexBox">
+        <input class="hide" name="student_sex" value="{{_sex}}" />
+        <view class="lineblock boy boyBox left">
+          <text class="lineblock {{_sex=='1'?'checkedBg':'checkBg'}}" data-sex="1" bindtap='chooseSex'></text>
+        </view>
+        <view class="lineblock girl girlBox left">
+          <text class="lineblock {{_sex=='2'?'checkedBg':'checkBg'}}" data-sex="2" bindtap='chooseSex'></text>
+        </view>
+      </view>
+    </view>
+    <view class="parkBox">
+      <view class="lineblock parkTitle-left addUserTitle">
+        <text class="textContract">学员岗位：</text>
+      </view>
+      <view class="lineblock parkTitle-right">
+        <input name="student_position" maxlength="5" value='{{user_id_detail.student_position}}' class="border testNum boxHeight" placeholder="请输入岗位名称" />
+      </view>
+    </view>
+    <view class="parkBox">
+      <view class="lineblock parkTitle-left addUserTitle">
+        <text class="textContract">毕业院校：</text>
+      </view>
+      <view class="lineblock parkTitle-right">
+        <input name="school" maxlength="10" value='{{user_id_detail.school}}' class="border testNum boxHeight" placeholder="请输入毕业院校" />
+      </view>
+    </view>
+    <view class="parkBox clear">
+      <view class="lineblock parkTitle-left addUserTitle">
+        <text class="textContract">学历：</text>
+      </view>
+      <view class="chooses left">
+        <view class="lineblock education left">
+          <view class="education_name" data-me="choose" bindtap='selectEducation'>
+            <input disabled='disabled' name="education" class="border testNum boxHeight" value='{{meEducation}}' />
+          </view>
+          <view class="education_select" wx:if="{{selectEducation}}">
+            <view class="select_one" bindtap="selectEducation" data-me="中专及以下">中专及以下</view>
+            <view class="select_one" bindtap="selectEducation" data-me="大专">大专</view>
+            <view class="select_one" bindtap="selectEducation" data-me="本科及以上">本科及以上</view>
+          </view>
+        </view>
+        <view class="right">
+          <view class="lineblock addUserTitle left">
+            <text class="textContract">专业：</text>
+          </view>
+          <view class="lineblock major left">
+            <input name="profession" maxlength="10" value='{{user_id_detail.profession}}' class="border testNum boxHeight" placeholder="专业" />
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="parkBox">
+      <text class="textContract">请您上传以下证件信息：</text>
+    </view>
+    <view class="parkBox">
+      <view class="lineblock parkTitle-left addUserTitle imageTitle">
+        <text class="textContract">身份证：</text>
+      </view>
+      <view class="lineblock parkTitle-right photo-image-wrap">
+        <view class='u-p-m'>
+          <image class="uploadBg" data-index='0' data-secondindex='0' src='{{otherFormat.card_z || "/image/upload.png"}}' bindtap='getImage'></image>
+          <text>身份证正面</text>
+        </view>
+        <view class='u-p-m'>
+          <image class="uploadBg" data-index='0' data-secondindex='1' src='{{otherFormat.card_f || "/image/upload.png"}}' bindtap='getImage'></image>
+          <text>身份证反面</text>
+        </view>
+      </view>
+    </view>
+    <view class="parkBox">
+      <view class="lineblock parkTitle-left addUserTitle imageTitle">
+        <text class="textContract">健康证：</text>
+      </view>
+      <view class="lineblock parkTitle-right photo-image-wrap">
+        <view class='u-p-m'>
+          <image class="uploadBg" data-index='1' data-secondindex='0' src='{{otherFormat.health_1 || "/image/upload.png"}}' bindtap='getImage'></image>
+          <text>健康证1</text>
+        </view>
+        <view class='u-p-m'>
+          <image class="uploadBg" data-index='1' data-secondindex='1' src='{{otherFormat.health_2 || "/image/upload.png"}}' bindtap='getImage'></image>
+          <text>健康证2</text>
+        </view>
+        <view class='u-p-m'>
+          <image class="uploadBg" data-index='1' data-secondindex='2' src='{{otherFormat.health_3 || "/image/upload.png"}}' bindtap='getImage'></image>
+          <text>健康证3</text>
+        </view>
+      </view>
+    </view>
+    <view class="parkBox">
+      <view class="lineblock parkTitle-left addUserTitle imageTitle">
+        <text class="textContract">劳动合同：</text>
+      </view>
+      <view class="lineblock parkTitle-right photo-image-wrap">
+        <view class='u-p-m'>
+          <image class="uploadBg" data-index='2' data-secondindex='0' src='{{otherFormat.labor_1 || "/image/upload.png"}}' bindtap='getImage'></image>
+          <text>劳动合同首页</text>
+        </view>
+        <view class='u-p-m'>
+          <image class="uploadBg" data-index='2' data-secondindex='1' src='{{otherFormat.labor_2 || "/image/upload.png"}}' bindtap='getImage'></image>
+          <text>劳动合同尾页</text>
+        </view>
+      </view>
+    </view>
+    <view class="parkBox">
+      <view class="lineblock parkTitle-left addUserTitle imageTitle">
+        <text class="textContract">培训协议：</text>
+      </view>
+      <view class="lineblock parkTitle-right photo-image-wrap">
+        <view class='u-p-m'>
+          <image class="uploadBg" data-index='3' data-secondindex='0' src='{{otherFormat.learnership || "/image/upload.png"}}' bindtap='getImage'></image>
+          <text>培训协议</text>
+        </view>
+      </view>
+    </view>
+    <view class="errors {{error==''?'hide':''}}">
+      <text>{{error}}</text>
+    </view>
+    <view class="btn-area">
+      <button class="submitButton" disabled='{{isAjax}}' formType="submit">保存</button>
+    </view>
+  </form>
+</view>

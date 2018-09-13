@@ -1,0 +1,21 @@
+<navigator class="addStudy" url='/pages/index/signUP/signUpList/addInfo/index?source_url=/pages/index/signUP/signUpList/editInfo/index&train_id={{train_id}}&contract_no={{contract_no}}&type_unit={{type_unit}}&unit_num={{unit_num}}'>新增培训学员</navigator>
+<view class="editBox students">
+  <view wx:for="{{studentList}}" class="studentBox">
+    <view class="lineblock select">
+      <text data-index="{{index}}" data-id="{{item.id}}" class="lineblock {{item.is_apply?'checkedBg':'checkBg'}}" bindtap='checkEdit'></text>
+    </view>
+    <view class="lineblock stuInfo addList">
+      <view>
+        <text class="userName">{{item.student_name}}</text>
+        <text class="sex {{item.student_sex==1?'boy':'girl'}}"></text>
+      </view>
+      <text class="block userPhone">{{item.student_phone}}</text>
+    </view>
+    <view class="lineblock edit">
+      <text data-index="{{index}}" data-id="{{item.id}}" class="lineblock editImg" bindtap='goSignUpListIndex'></text>
+    </view>
+  </view>
+</view>
+<view class="sure" data-index="10000000" bindtap='goSignUpListIndex'>
+  <text>确认</text>
+</view>
